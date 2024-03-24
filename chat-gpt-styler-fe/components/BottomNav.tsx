@@ -1,6 +1,7 @@
+'use client';
+
 import { HundredThreeSixStylerLogo } from '@/public/assets/logos';
 import { DiscordIcon, GitHubIcon, TeamIcon } from '@/public/assets/misc_icons';
-import { redirect } from 'next/navigation';
 import Link from 'next/link';
 
 export default function BottomNav() {
@@ -47,13 +48,10 @@ export default function BottomNav() {
                 <GitHubIcon className='h-10 w-10' />
                 <p className='font-medium'>GitHub</p>
               </button>
-              <button
-                className='grid place-items-center'
-                onClick={() => redirect('/developers')}
-              >
+              <Link href='/developers' className='grid place-items-center'>
                 <TeamIcon className='h-10 w-10' />
                 <p className='font-medium'>Our Team</p>
-              </button>
+              </Link>
             </div>
             <div className='grid grid-cols-2 place-items-center text-xs text-neutral-500 font-medium'>
               <Link href=''>Report Bugs</Link>

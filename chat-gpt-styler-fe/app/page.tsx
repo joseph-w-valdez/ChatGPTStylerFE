@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import NavBar from '@/components/NavBar';
 import BottomNav from '@/components/BottomNav';
 import InstallButton from '@/components/install_button/InstallButton';
 import { useEffect, useRef } from 'react';
@@ -42,7 +41,6 @@ export default function Home() {
   return (
     <main className='h-screen max-w-full'>
       <div className='grid place-items-center h-screen '>
-        <NavBar />
         <div>
           <div className='grid justify-items-center gap-4 px-6 md:px-10 pt-24 md:pt-48 pb-12 md:pb-24'>
             <div className='text-center'>
