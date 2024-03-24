@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, ReactNode } from "react";
 
 // InstallButtton.tsx
 export interface InstallButtonTypes {
@@ -6,25 +6,23 @@ export interface InstallButtonTypes {
 }
 
 export interface ActiveLinkTypes {
-  src: string,
-  alt: string,
+  svg: ReactNode,
   name: string,
   linkRedirect: string
 }
 
 export interface BrowserSelectPopupTypes {
-  options: OptionType[]
-  setActiveLink: Dispatch<SetStateAction<any>>
+  options: OptionType[],
+  setActiveLink: Dispatch<SetStateAction<any>>,
   isBrowserPopupActive: boolean,
   setIsBrowserPopupActive: Dispatch<SetStateAction<any>>
 }
 
 export interface OptionType {
-  id: number;
+  id: number,
   buttonContent: {
-    src: string;
-    alt: string;
-    name: string;
+    svg: ReactNode,
+    name: string,
     linkRedirect: string
   };
 }

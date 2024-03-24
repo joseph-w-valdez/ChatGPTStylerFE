@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { ChromeIcon } from '@/public/assets/misc_icons';
 import { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { ActiveLinkTypes, BrowserSelectPopupTypes } from './interface';
@@ -10,8 +10,7 @@ export default function InstallButton() {
   const [isBrowserPopupActive, setIsBrowserPopupActive] =
     useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<ActiveLinkTypes>({
-    src: 'assets/misc_icons/CHROME_ICON.svg',
-    alt: 'Chrome Icons',
+    svg: <ChromeIcon className='h-8 w-8 hover:text-teal-800/50' />,
     name: 'Chrome',
     linkRedirect: 'https://www.google.com',
   });
@@ -20,15 +19,9 @@ export default function InstallButton() {
     <div className='flex justify-between text-white rounded-md w-60 h-11 px-2 py-1.5 items-center bg-teal-500 shadow-lg shadow-teal-800/50 relative bottom-0 left-0'>
       <button
         onClick={() => window.open(activeLink.linkRedirect, '_blank')}
-        className='flex items-center'
+        className='flex items-center gap-2'
       >
-        <Image
-          src={activeLink.src}
-          alt={activeLink.alt}
-          width={30}
-          height={30}
-          className='pr-2 '
-        />
+        {activeLink.svg}
         {`Install for ${activeLink.name}!`}
       </button>
       <div className='ml-2 w-0.5 h-full border bg-white'></div>
@@ -60,15 +53,9 @@ const BrowserSelectPopup = ({
         setActiveLink(i.buttonContent);
         setIsBrowserPopupActive(!isBrowserPopupActive);
       }}
-      className='flex items-center w-full px-2 hover:bg-green-900'
+      className='flex items-center gap-2 w-full px-2 hover:bg-green-900'
     >
-      <Image
-        src={i.buttonContent.src}
-        alt={i.buttonContent.alt}
-        width={18}
-        height={18}
-        className='pr-1'
-      />
+      {i.buttonContent.svg}
       {i.buttonContent.name}
     </button>
   ));
