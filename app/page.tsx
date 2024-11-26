@@ -154,7 +154,6 @@ export default function Home() {
                       <li>
                         New button to scroll to the top of the message thread
                       </li>
-                      <li>Making opacity-0 default buttons more visible</li>
                     </ul>
                   </div>
                 </div>
